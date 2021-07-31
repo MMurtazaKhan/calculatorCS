@@ -108,6 +108,13 @@ namespace calculatorCS
             operation = "/";
         }
 
+        private void buttonExp_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            operation = "exp";
+        }
+
         private void buttonSq_Click(object sender, EventArgs e)
         {
             firstNumber = Convert.ToDouble(textBox1.Text);
@@ -163,10 +170,119 @@ namespace calculatorCS
                 result = firstNumber / secondnumber;
                 textBox1.Text = result.ToString();
             }
+            if (operation == "exp")
+            {
+                result = Math.Pow(firstNumber, secondnumber);
+                textBox1.Text = result.ToString();
+            }
            
         }
 
-        
+        private void button21_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Sin(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonCos_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Cos(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonTan_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Tan(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonSinh_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Sinh(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonCosh_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Cosh(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonTanh_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Tanh(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonPoint_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += ".";
+        }
+
+        private void buttonDec_Click(object sender, EventArgs e)
+        {
+            int index = textBox1.Text.Length;
+            index--;
+            textBox1.Text = textBox1.Text.Remove(index);
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "0";
+            }
+            }
+
+        private void buttonInv_Click(object sender, EventArgs e)
+        {
+            double result = double.Parse(textBox1.Text);
+            result = 1 / result;
+            textBox1.Text = result.ToString();
+        }
+
+        private void buttonfloor_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Floor(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonCeil_Click(object sender, EventArgs e)
+        {
+            firstNumber = Convert.ToDouble(textBox1.Text);
+            textBox1.Text = "";
+            double ans = Math.Ceiling(firstNumber);
+            textBox1.Text = ans.ToString();
+        }
+
+        private void buttonPi_Click(object sender, EventArgs e)
+        {
+
+            double result = Math.PI;
+            textBox1.Text = result.ToString();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            double result = double.Parse(textBox1.Text);
+            result = result / 100;
+            textBox1.Text = result.ToString();
+        }
+
+        private void buttonEXIT_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
